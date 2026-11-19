@@ -1,0 +1,5 @@
+{
+  "legacy_image": "modernize-legacy:cp0",
+  "modern_image": "modernize-modern:cp0",
+  "log_level": "INFO"
+}

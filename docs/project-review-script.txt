@@ -1,0 +1,357 @@
+LEGACY MODERNIZATION CLI
+Project review and recording script
+
+Suggested duration: 10-12 minutes
+Prepared: 19 November 2026
+
+Record your terminal and editor. ACTION tells you what to do; SAY is the
+narration to read aloud. Pause the recording during long-running stages.
+Use fresh output folders; change the final number if a folder already exists.
+
+1. PREPARE BEFORE RECORDING
+---------------------------
+ACTION
+Start Docker Desktop and wait until it is ready. Open your terminal:
+
+  cd /Users/awanishkumar/hornet/sem5/agenticAI
+  .venv/bin/python --version
+  docker version
+
+Python should be 3.12 or later. Docker should display Client and Server.
+Confirm both runtime images are available:
+
+  docker image inspect modernize-legacy:cp0 modernize-modern:cp0 \
+    --format '{{.Id}}'
+
+If either image is missing, build it before recording:
+
+  docker build -f containers/legacy.Dockerfile \
+    -t modernize-legacy:cp0 .
+  docker build -f containers/modern.Dockerfile \
+    -t modernize-modern:cp0 .
+
+Open the repository in your editor. Keep these files available:
+  README.md
+  corpus/golden_ledger/main.py
+  src/modernize/terminal.py
+  src/modernize/openai_client.py
+
+2. INTRODUCE THE PROBLEM AND PROJECT
+------------------------------------
+ACTION
+Show the beginning of README.md.
+
+SAY
+"Legacy programs can depend on outdated language syntax and runtime behavior.
+Updating their syntax alone does not guarantee that the program will produce
+the same results.
+
+This project demonstrates an evidence-based workflow for modernizing small
+Python 2.7 projects to Python 3.12. It analyzes the original source, records
+its behavior, generates documentation, converts the code, and compares the
+converted results with those original observations.
+
+The current complete workflow supports four registered example projects. It
+uses stored AI proposals through deterministic mock clients, so this
+demonstration requires no API key. The execution, test outcomes, and
+verification are performed by the actual implementation."
+
+3. EXPLAIN THE ORIGINAL EXAMPLE
+-------------------------------
+ACTION
+Show corpus/golden_ledger/main.py in the editor. Point out split_bill,
+summarize, and parse_amount.
+
+SAY
+"For this review, I am using the golden ledger project. It is deliberately
+small enough to inspect manually.
+
+Its functions exercise billing calculations, collection handling, and input
+parsing. These provide concrete behaviors to observe before making changes.
+
+The goal of modernization is to preserve the original behavior, including
+suspected legacy bugs. Correcting an existing business-logic bug would
+require a separate specification."
+
+Do not execute the Python 2 application on the host Python interpreter.
+
+4. LAUNCH THE TERMINAL INTERFACE
+--------------------------------
+ACTION
+Return to your terminal and run:
+
+  PYTHONPATH=src .venv/bin/python -m modernize tui
+
+Show the compact header and modernize> prompt.
+
+SAY
+"This is the guided terminal interface. The header shows the application,
+selected project, and latest output location.
+
+Users can type slash commands directly or press Enter to open the action
+menu. Supported terminals provide arrow-key navigation."
+
+ACTION
+Press Enter. Move through two or three options using Up/Down. Return to
+/project and press Enter. In the project menu, select golden_ledger.
+
+SAY
+"The project menu contains the registered examples and a custom-folder
+option. Custom Python 2 folders currently support static scanning; the
+complete migration workflow uses the registered corpus."
+
+5. SCAN THE ORIGINAL PROJECT
+----------------------------
+ACTION
+At modernize>, enter:
+
+  /scan
+
+At New output folder, enter:
+
+  artifacts/detailed-review-scan-1
+
+Select sequential analysis and press Enter.
+
+SAY WHILE IT RUNS
+"The scanner inventories the source files and parses them inside the
+Python 2.7 container. It does not first convert the files to make them parse.
+
+It extracts structured facts such as functions, classes, signatures,
+imports, approximate calls, existing comments, and side-effect markers.
+
+This stage is deterministic and makes no AI request. It parses the project
+without importing or executing the project's application code."
+
+Wait for the successful scan message and the prompt to return.
+
+6. INSPECT THE ANALYSIS OUTPUT
+------------------------------
+ACTION
+Enter /review. Accept the latest output folder with Enter. Select facts.
+Show a function record, its signature, or an import record in the JSON.
+
+SAY
+"The analysis is stored as structured JSON. These facts provide
+source-grounded context for later stages and make the analysis inspectable.
+
+Call relationships are approximate static analysis. Dynamic imports and
+reflection cannot always be resolved reliably."
+
+ACTION
+Press q to return from the pager.
+
+7. CONFIGURE THE COMPLETE MIGRATION
+-----------------------------------
+ACTION
+Enter /run. Make each selection one prompt at a time:
+
+  Run scope:          golden_ledger
+  Comparison:         python2-python3.v1
+  New output folder:  artifacts/detailed-review-run-1
+  Analysis:           sequential
+
+The comparison policy is the second option. Press Down, then Enter, or
+type 2 and press Enter. Use a different output folder if it already exists.
+
+SAY
+"I am explicitly selecting the documented Python 2-Python 3 comparison
+policy. Strict comparison remains the default.
+
+The policy handles specified runtime representation and diagnostic
+differences. Raw observations and raw comparison results remain available
+separately.
+
+The output directory must be new, which prevents this run from overwriting
+an earlier result."
+
+8. EXPLAIN THE STAGE CHECKLIST
+------------------------------
+ACTION
+Show the live checklist while the pipeline progresses.
+
+SAY
+"The checklist is driven by actual worker events. It shows pending, active,
+completed, failed, or cancelled stages.
+
+First, the pipeline analyzes the original code. It then generates
+characterization cases by executing proposed inputs against the original
+program.
+
+The original code is the oracle. Expected outputs come from its execution,
+not from an AI-generated answer.
+
+The pipeline also measures the unmodified program on the modern runtime.
+That baseline shows what fails before conversion.
+
+It then generates documentation, converts source, performs bounded repairs,
+and finally evaluates the sealed held-out cases.
+
+Legacy and converted code execute in containers with networking disabled,
+resource limits, and ephemeral scratch space. Tests and fixtures are
+protected by checksums while source is being changed.
+
+A completed checklist stage means the stage finished. It does not by itself
+mean every migration test passed."
+
+Pause recording during execution. Resume when the result summary appears.
+
+9. EXPLAIN THE ACTUAL RESULTS
+-----------------------------
+ACTION
+Show the comparison mode and all four result rows. Read the actual displayed
+counts. The latest verified golden run recorded the following:
+
+  Raw matches:        15/24
+  Policy passes:      24/24
+  Held-out raw:        2/3
+  Held-out policy:     3/3
+
+These are prior recorded results, not guaranteed results for a new run.
+
+SAY
+"The selected comparison mode appears first. The summary then separates
+exact raw matches, policy passes, raw held-out results, and policy held-out
+results.
+
+The distinction matters: policy passes do not mean the Python 2 and Python 3
+raw observations are identical.
+
+Held-out cases are evaluated after repairs finish and are reported
+separately. They provide an additional check beyond the cases available to
+the repair stage.
+
+Matching these recorded cases does not establish equivalent behavior for
+every possible input."
+
+10. REVIEW THE REPORT
+----------------------
+ACTION
+In Next action, select View report. Show the overall recorded status,
+legacy-on-legacy results, legacy-on-modern baseline, converted-on-modern
+results, and coverage or unresolved-case information.
+
+SAY
+"The report presents the original runtime results, the modern-runtime
+baseline, and the converted results.
+
+It also retains coverage information, quarantined cases, repair evidence,
+and references to the underlying records. This allows reviewers to inspect
+the evidence behind the summary."
+
+ACTION
+Press q to return to Next action.
+
+11. INSPECT THE SOURCE CHANGES
+------------------------------
+ACTION
+Select Inspect changes. Select a file if prompted. Show its saved diff.
+
+SAY
+"The diff shows the source changes made during modernization. A reviewer
+can inspect the conversion rather than relying only on the final pass
+counts.
+
+Source changes are validated, and test and fixture checksums are compared
+before and after the stages that edit source."
+
+Point to one actual change and describe only what the diff shows.
+Press q to leave the pager.
+
+12. VERIFY THE SAVED EVIDENCE
+-----------------------------
+ACTION
+In Next action, select Verify and wait. A successful verification prints:
+
+  Command completed. Exit 0.
+
+SAY
+"This command verifies the saved evidence offline. It recomputes the report
+measurements and checks record consistency, seals, source identities, and
+other saved artifacts.
+
+Verification does not make an AI request or rerun the application. A
+successful verification means the saved records are consistent; it is not
+a proof of correctness for every input."
+
+ACTION
+Select Return to prompt. Enter /status.
+
+SAY
+"The output location remains selected, so I can reopen its report or
+verification later. Artifacts persist on disk even after the terminal
+session closes."
+
+ACTION
+Enter /quit.
+
+13. SHOW THE ARTIFACT LOCATIONS
+-------------------------------
+ACTION
+From your normal shell, run:
+
+  ls artifacts/detailed-review-run-1
+
+SAY
+"The output folder contains the aggregate report, run metadata, analysis
+facts, checksum records, and the project's stage artifacts."
+
+ACTION
+Open these files in the editor, relative to the run output folder:
+
+  report.md
+  golden_ledger/documentation/architecture.md
+  golden_ledger/repair/source/main.py
+
+SAY
+"These are the readable report, generated architecture documentation, and
+final converted source. The original source snapshot remains available
+separately for comparison."
+
+14. DEMONSTRATE THE TERMINAL TESTS
+---------------------------------
+ACTION
+Run unit checks first, then integration checks:
+
+  .venv/bin/python -m unittest discover \
+    -s tests/unit -p 'test_terminal*.py' -v
+
+  .venv/bin/python -m unittest discover \
+    -s tests/integration -p 'test_terminal*.py' -v
+
+SAY
+"The terminal checks cover command construction, safe artifact previews,
+cancellation, menu navigation, stage states, comparison presentation, and
+post-run actions.
+
+The integration tests include real pseudoterminal checks for arrow-key
+selection and restoration of terminal input settings."
+
+Read the actual test output during recording. The current recorded results
+are 21 terminal unit tests and 5 terminal integration tests, all passing.
+
+15. STATE THE LIMITATIONS CLEARLY
+---------------------------------
+ACTION
+Show the limitations or testing section of README.md.
+
+SAY
+"The current full workflow is a corpus-based demonstration using stored
+proposals. It does not yet generate fresh AI migration proposals for
+arbitrary projects.
+
+Custom Python 2 folders can be scanned without an API key. Connecting fresh
+AI generation would require a real provider and its credentials.
+
+The broader suite currently has one documented historical CP2 source-hash
+failure. Its proposed test correction awaits approval; the original
+assertion has not been weakened.
+
+CP11's final human approval remains pending. These are the current
+capabilities and limitations of the implementation."
+
+RECORDING NOTES
+----------------
+This guide follows the current UI. A new recording has not been rehearsed.
+Read actual results rather than presenting prior counts as new measurements.
+Keep the mock-workflow limitation and known full-suite failure explicit.

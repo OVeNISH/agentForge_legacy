@@ -1,0 +1,41 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "summary": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "title": "Summary",
+      "type": "string"
+    },
+    "observed_return_types": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 32,
+      "title": "Observed Return Types",
+      "type": "array"
+    },
+    "observed_exceptions": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 32,
+      "title": "Observed Exceptions",
+      "type": "array"
+    },
+    "limitations": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Limitations",
+      "type": "string"
+    }
+  },
+  "required": [
+    "summary",
+    "observed_return_types",
+    "observed_exceptions",
+    "limitations"
+  ],
+  "title": "DocumentationResponse",
+  "type": "object"
+}

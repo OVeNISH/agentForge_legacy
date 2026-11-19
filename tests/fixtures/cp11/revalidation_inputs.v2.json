@@ -1,0 +1,290 @@
+{
+  "file_report/reportkit/__init__.py::build_report": [
+    {
+      "args_json": "[13, \"out-new.txt\", 7]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[null, \"out-alt.txt\", null]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "file_report/reportkit/storage.py::read_numbers": [
+    {
+      "args_json": "[\"new-in.txt\"]",
+      "category": "typical",
+      "files_json": "{\"new-in.txt\": \"MTEzCi0xOQo=\"}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[\"new-other.txt\"]",
+      "category": "edge",
+      "files_json": "{\"new-other.txt\": \"MAoxNwo=\"}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "file_report/reportkit/storage.py::write_report": [
+    {
+      "args_json": "[\"out-new.txt\", {\"A\": 13, \"B\": 9}]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[{\"$bytes\": \"b3V0LW90aGVyLnR4dA==\"}, {\"C\": 29}]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "file_report/reportkit/summary.py::summarize": [
+    {
+      "args_json": "[[113, 7, -3]]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[[29, 41]]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "golden_ledger/main.py::parse_amount": [
+    {
+      "args_json": "[{\"$bytes\": \"YmFkLWlucHV0LWFscGhh\"}]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[{\"$bytes\": \"YmFkLWlucHV0LWJldGE=\"}]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "golden_ledger/main.py::split_bill": [
+    {
+      "args_json": "[113, 7]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[-117, 6]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "golden_ledger/main.py::summarize": [
+    {
+      "args_json": "[{\"newA\": 17, \"newB\": -5}]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[{\"newC\": 0}]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "ranking/main.py::Scoreboard.__init__": [
+    {
+      "args_json": "[1, 2]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[1, 2, 3]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "ranking/main.py::Scoreboard.add": [
+    {
+      "args_json": "[\"NewA\", 9]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[{\"$bytes\": \"TmV3Qg==\"}, 17]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "ranking/main.py::Scoreboard.ranked": [
+    {
+      "args_json": "[]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[{\"method\": \"add\", \"args\": [\"NewA\", 17], \"kwargs\": {}}, {\"method\": \"add\", \"args\": [\"NewB\", 19], \"kwargs\": {}}]"
+    },
+    {
+      "args_json": "[]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[{\"method\": \"add\", \"args\": [\"NewC\", 23], \"kwargs\": {}}]"
+    }
+  ],
+  "ranking/main.py::compare_scores": [
+    {
+      "args_json": "[[\"AlphaZ\", 113], [\"BetaZ\", 49]]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[[\"EqualZ\", 31], [\"otherZ\", 31]]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "text_pipeline/main.py::clean_names": [
+    {
+      "args_json": "[[\"  New Name  \", \" \", \" C \"]]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[[\" \\u03a9 \", \"\"]]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "text_pipeline/main.py::decode_label": [
+    {
+      "args_json": "[{\"$bytes\": \"bmV3IHNub3cg6Zuq\"}]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[{\"$bytes\": \"QVNDSUktbmV3LXR3bw==\"}]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "text_pipeline/main.py::describe": [
+    {
+      "args_json": "[{\"$bytes\": \"bmV3IGJ5dGVzIMOp\"}]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[{\"$bytes\": \"bmV3LWFzY2lp\"}]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "text_pipeline/main.py::encode_label": [
+    {
+      "args_json": "[\"new snow \\u96ea\"]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[{\"$bytes\": \"QVNDSUktbmV3\"}]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ],
+  "text_pipeline/main.py::pair_names": [
+    {
+      "args_json": "[[\"Solo\", \"Pair\", \"Third\"]]",
+      "category": "typical",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    },
+    {
+      "args_json": "[[{\"$bytes\": \"WA==\"}, {\"$bytes\": \"WQ==\"}]]",
+      "category": "edge",
+      "files_json": "{}",
+      "kwargs_json": "{}",
+      "reason": "Fresh input-only proposal for independent revalidation; outcome comes only from legacy execution.",
+      "setup_json": "[]"
+    }
+  ]
+}

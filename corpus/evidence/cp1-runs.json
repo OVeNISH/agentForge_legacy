@@ -1,0 +1,53 @@
+{
+  "checkpoint": "CP1",
+  "date": "2026-11-19",
+  "purpose": "Python 2.7 corpus smoke checks; not characterization fixtures",
+  "image": "modernize-legacy:cp0",
+  "image_id": "sha256:981bbf199b2a829c4cfceb54f1e75a1409d4dff7602b64a09c58f08a2fd4e5e5",
+  "image_inspect": {
+    "command": "docker image inspect --format '{{.Id}} {{.Os}}/{{.Architecture}} user={{.Config.User}}' modernize-legacy:cp0",
+    "exit_code": 0,
+    "output": "sha256:981bbf199b2a829c4cfceb54f1e75a1409d4dff7602b64a09c58f08a2fd4e5e5 linux/arm64 user=65534:65534\n"
+  },
+  "runs": [
+    {
+      "project": "golden_ledger",
+      "command": "docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --memory 128m --cpus 1 --pids-limit 64 --ulimit cpu=10:10 --tmpfs /tmp:rw,nosuid,nodev,size=16m --mount type=bind,source=/Users/awanishkumar/hornet/sem5/agenticAI/corpus,target=/corpus,readonly --workdir /tmp --entrypoint python modernize-legacy:cp0 -B /corpus/golden_ledger/main.py",
+      "exit_code": 0,
+      "output": "split: 3 -4\ntotal: 5\nempty: 0\nparsed: 12\nbad: invalid: invalid literal for int() with base 10: 'bad'\n",
+      "source_sha256": {
+        "golden_ledger/main.py": "daa6956c6132336e17f2468c8248d48b4af78cf0c7c04303e3bb4e0a7e84920e"
+      }
+    },
+    {
+      "project": "text_pipeline",
+      "command": "docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --memory 128m --cpus 1 --pids-limit 64 --ulimit cpu=10:10 --tmpfs /tmp:rw,nosuid,nodev,size=16m --mount type=bind,source=/Users/awanishkumar/hornet/sem5/agenticAI/corpus,target=/corpus,readonly --workdir /tmp --entrypoint python modernize-legacy:cp0 -B /corpus/text_pipeline/main.py",
+      "exit_code": 0,
+      "output": "names: [u'Ada', u'Lin']\npairs: (2, [(0, u'Ada'), (1, u'Lin')])\nempty: (0, [])\nencoded: 'caf\\xc3\\xa9'\ndecoded: u'caf\\xe9'\ntypes: ('str', 'unicode', 5, 4)\n",
+      "source_sha256": {
+        "text_pipeline/main.py": "536a825e5fcfa0db3db1caed1ea739cf8a8dd48898cad5248c031daafaa18f63"
+      }
+    },
+    {
+      "project": "ranking",
+      "command": "docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --memory 128m --cpus 1 --pids-limit 64 --ulimit cpu=10:10 --tmpfs /tmp:rw,nosuid,nodev,size=16m --mount type=bind,source=/Users/awanishkumar/hornet/sem5/agenticAI/corpus,target=/corpus,readonly --workdir /tmp --entrypoint python modernize-legacy:cp0 -B /corpus/ranking/main.py",
+      "exit_code": 0,
+      "output": "empty: []\nranked: [('ada', 7), ('Bob', 7), ('Lin', 3)]\nequal: 0\n",
+      "source_sha256": {
+        "ranking/main.py": "4076faafe90d4135bab2e6fd3b0eb402fcdc879c27fa12056edf48eac6992314"
+      }
+    },
+    {
+      "project": "file_report",
+      "command": "docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --memory 128m --cpus 1 --pids-limit 64 --ulimit cpu=10:10 --tmpfs /tmp:rw,nosuid,nodev,size=16m --mount type=bind,source=/Users/awanishkumar/hornet/sem5/agenticAI/corpus,target=/corpus,readonly --workdir /tmp --entrypoint python modernize-legacy:cp0 -B /corpus/file_report/main.py",
+      "exit_code": 0,
+      "output": "{'count': 3, 'ticket': 391, 'created_at': 1795086746.297066, 'mean': 1}\n",
+      "source_sha256": {
+        "file_report/main.py": "3a0bc53fedca2e7d80d07f22337f2b70b23cbfa893f2ab3a86908b8acfdf1072",
+        "file_report/reportkit/__init__.py": "cdbc4e4354a777e914806eb5dcc58bf73f1ceeae9520094b8e2136635451ed81",
+        "file_report/reportkit/storage.py": "7cbacc028b855bef289fe6f7d6182277ce63fe87acc14d8dbad90558debe1470",
+        "file_report/reportkit/summary.py": "7792f0daf0f94b502a37e9dad90a252517562942c056b5333f0f692ed23d1f92"
+      }
+    }
+  ]
+}

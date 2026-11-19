@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legacy-modernize"
+version = "0.1.0"
+description = "CLI for evidence-based legacy code modernization"
+requires-python = ">=3.12"
+dependencies = ["openai==3.55.1", "pydantic==2.14.3"]
+
+[project.scripts]
+modernize = "modernize.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+modernize = ["prompts/*.txt", "prompts/*.json", "prompts/documentation/*.txt", "prompts/documentation/*.json", "prompts/transformation/*.txt", "prompts/transformation/*.json", "prompts/repair/*.txt", "prompts/repair/*.json"]

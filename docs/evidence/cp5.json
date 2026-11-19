@@ -1,0 +1,84 @@
+{
+  "archive_bytes": 120716,
+  "archive_sha256": "6488d6a708ef0cd9b0858b20d7e25af9341df7e44b10e0a9cd818f9d29f1b6a2",
+  "commands": {
+    "run": "PYTHONPATH=src .venv/bin/python scripts/characterize_corpus.py --output artifacts/cp5-run2",
+    "tests": ".venv/bin/python scripts/test.py",
+    "verify": "PYTHONPATH=src .venv/bin/python scripts/verify_cp5.py docs/evidence/cp5.tar.gz"
+  },
+  "heldout_passes": 15,
+  "mutation_detection_percent": 87.5,
+  "mutations_detected": 7,
+  "mutations_total": 8,
+  "projects": [
+    {
+      "accepted": 18,
+      "comparisons": 36,
+      "coverage": {
+        "branches": 100.0,
+        "lines": 100.0
+      },
+      "heldout": 3,
+      "passes": 36,
+      "project": "golden_ledger",
+      "quarantined": 0
+    },
+    {
+      "accepted": 30,
+      "comparisons": 60,
+      "coverage": {
+        "branches": 100.0,
+        "lines": 100.0
+      },
+      "heldout": 5,
+      "passes": 60,
+      "project": "text_pipeline",
+      "quarantined": 0
+    },
+    {
+      "accepted": 20,
+      "comparisons": 40,
+      "coverage": {
+        "branches": 100.0,
+        "lines": 100.0
+      },
+      "heldout": 4,
+      "passes": 40,
+      "project": "ranking",
+      "quarantined": 0
+    },
+    {
+      "accepted": 20,
+      "comparisons": 40,
+      "coverage": {
+        "branches": 100.0,
+        "lines": 56.25
+      },
+      "heldout": 3,
+      "passes": 40,
+      "project": "file_report",
+      "quarantined": 5
+    }
+  ],
+  "tests": {
+    "exit_code": 0,
+    "integration_passed": 15,
+    "integration_run": 25,
+    "integration_skipped": 10,
+    "unit_passed": 54,
+    "unit_run": 55,
+    "unit_skipped": 1
+  },
+  "totals": {
+    "accepted": 88,
+    "comparisons": 176,
+    "heldout": 15,
+    "heldout_container_runs": 15,
+    "mock_calls": 20,
+    "mutation_container_runs": 145,
+    "oracle_container_runs": 283,
+    "passes": 176,
+    "quarantined": 5,
+    "training": 73
+  }
+}

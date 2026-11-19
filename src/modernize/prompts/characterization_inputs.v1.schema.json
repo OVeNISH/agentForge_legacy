@@ -1,0 +1,74 @@
+{
+  "$defs": {
+    "CharacterizationInput": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "typical",
+            "edge",
+            "empty",
+            "boundary",
+            "unicode",
+            "bytes"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "args_json": {
+          "maxLength": 16000,
+          "title": "Args Json",
+          "type": "string"
+        },
+        "kwargs_json": {
+          "maxLength": 16000,
+          "title": "Kwargs Json",
+          "type": "string"
+        },
+        "reason": {
+          "maxLength": 800,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "setup_json": {
+          "default": "[]",
+          "maxLength": 16000,
+          "title": "Setup Json",
+          "type": "string"
+        },
+        "files_json": {
+          "default": "{}",
+          "maxLength": 16000,
+          "title": "Files Json",
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "args_json",
+        "kwargs_json",
+        "reason"
+      ],
+      "title": "CharacterizationInput",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/CharacterizationInput"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Cases",
+      "type": "array"
+    }
+  },
+  "required": [
+    "cases"
+  ],
+  "title": "CharacterizationInputs",
+  "type": "object"
+}

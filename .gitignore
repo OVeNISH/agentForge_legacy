@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+artifacts/
+.env
+
+# Local agent/editor metadata
+.agents/
+.codex/
+.claude/
+.cursor/
+.planning/
+.gsd/
+.aider/
+.opencode/
+.gemini/

@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "id": "golden_ledger",
+      "entry_point": "golden_ledger/main.py",
+      "golden": true,
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "source": "Original code authored in this repository for CP1 on 2026-11-19; no upstream project.",
+      "hazards": ["print", "except", "dict_iteration", "integer_division"]
+    },
+    {
+      "id": "text_pipeline",
+      "entry_point": "text_pipeline/main.py",
+      "golden": false,
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "source": "Original code authored in this repository for CP1 on 2026-11-19; no upstream project.",
+      "hazards": ["print", "str_bytes_unicode", "map_filter_zip"]
+    },
+    {
+      "id": "ranking",
+      "entry_point": "ranking/main.py",
+      "golden": false,
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "source": "Original code authored in this repository for CP1 on 2026-11-19; no upstream project.",
+      "hazards": ["print", "dict_iteration", "comparison_sort"]
+    },
+    {
+      "id": "file_report",
+      "entry_point": "file_report/main.py",
+      "golden": false,
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "source": "Original code authored in this repository for CP1 on 2026-11-19; no upstream project.",
+      "hazards": ["print", "dict_iteration", "integer_division", "relative_import", "file_io", "time_random"]
+    }
+  ]
+}

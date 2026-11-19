@@ -1,0 +1,36 @@
+{
+  "limitations": "Supports recorded primitive inputs only; custom numeric protocols, mixed-type ordering, dynamic behavior and quarantined clock paths remain outside the evidence.",
+  "projects": {
+    "file_report": {
+      "assessment": "Reviewed general numeric/type/encoding/sorting compatibility and unchanged public API; file_report adds shared path-only open validation. No fixture-valued branches, exception suppression, test access or observation mutation.",
+      "source_sha256": {
+        "main.py": "8c5c160ead944d48645eb19623c2318656b6e3baf811f7edb8b6eea5988b2f0a",
+        "reportkit/__init__.py": "43432110b63327fbc20a2c8a0e28df94258f9d0269f015be6173a5a542f67d9f",
+        "reportkit/_legacy_compat.py": "fc28def09ffe2fdb2c194841ff6b222d31c7236833c5073742c40b324ff7ced2",
+        "reportkit/storage.py": "72feb5eb9cfbb30e6b636d2b2e54dd094b797dad8591d6fb039e6e4b1de186e1",
+        "reportkit/summary.py": "b0a2a2c5e7f6d7ed0d14a4b50646e0b9b09b836f32d44ed6eb935cca6b5c5b33"
+      }
+    },
+    "golden_ledger": {
+      "assessment": "Reviewed general numeric/type/encoding/sorting compatibility and unchanged public API; file_report adds shared path-only open validation. No fixture-valued branches, exception suppression, test access or observation mutation.",
+      "source_sha256": {
+        "_legacy_compat.py": "a622d0de838f2a09c9ce092c7e71fd4926ee1ad4d75329bb1b18390af6b1c5c5",
+        "main.py": "cb57fa07065de5b3912d3e1f85a7c3d34d682a219dddf776745c616a4692a338"
+      }
+    },
+    "ranking": {
+      "assessment": "Reviewed general numeric/type/encoding/sorting compatibility and unchanged public API; file_report adds shared path-only open validation. No fixture-valued branches, exception suppression, test access or observation mutation.",
+      "source_sha256": {
+        "main.py": "0e578f6e133560b25527261cae1080dbe958151dd30d2cb2e43eac79c761952b"
+      }
+    },
+    "text_pipeline": {
+      "assessment": "Reviewed general numeric/type/encoding/sorting compatibility and unchanged public API; file_report adds shared path-only open validation. No fixture-valued branches, exception suppression, test access or observation mutation.",
+      "source_sha256": {
+        "main.py": "6bdd25c37fd0ff46405f93e5b25341f4e91b97f9bb73d399323653c1bf27682b"
+      }
+    }
+  },
+  "reviewer": "Coding agent",
+  "scope": "CP8 documented conversion plus source-only path validation; all final source hashes must match this pre-evaluation review."
+}

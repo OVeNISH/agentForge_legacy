@@ -1,0 +1,49 @@
+{
+  "golden_ledger": {
+    "edits": [
+      {"path": "main.py", "before": "\ndef split_bill(", "after": "\nfrom _legacy_compat import legacy_divide\n\n\ndef split_bill(", "hazard": "division", "reason": "Import the shared division helper and keep the public entry point unchanged."},
+      {"path": "main.py", "before": "return amount / people", "after": "return legacy_divide(amount, people)", "hazard": "division", "reason": "Preserve Python 2 floor division for integer operands while retaining true division for floats."},
+      {"path": "main.py", "before": "return 'invalid: ' + str(error)", "after": "return b'invalid: ' + str(error).encode('ascii')", "hazard": "bytes_unicode", "reason": "The original invalid-message result is a byte string; keep the byte-valued prefix/result without swallowing additional exceptions."}
+    ],
+    "new_files": [
+      {"path": "_legacy_compat.py", "source": "\"\"\"[Machine-generated] Compatibility for built-in numeric division.\"\"\"\n\n\ndef legacy_divide(left, right):\n    \"\"\"[Machine-generated] Floor integer quotients; divide other numbers normally.\"\"\"\n    # shortcut: custom Python 2 __div__ protocols are unsupported; review user-defined numeric types.\n    if isinstance(left, int) and isinstance(right, int):\n        return left // right\n    return left / right\n", "hazard": "division", "reason": "Evaluate operands once and share the numeric dispatch in a source helper."}
+    ],
+    "needs_human_review": ["Python 2 exception identity, messages and byte-string runtime tags still need CP9 evaluation.", "Custom __div__ and Python 2 long result types are outside this numeric helper's support."]
+  },
+  "text_pipeline": {
+    "edits": [
+      {"path": "main.py", "before": "return label.encode('utf-8')", "after": "return label.decode('ascii').encode('utf-8') if isinstance(label, bytes) else label.encode('utf-8')", "hazard": "bytes_unicode", "reason": "Python 2 byte-string encode implicitly decodes ASCII first; Unicode input encodes directly."},
+      {"path": "main.py", "before": "return raw.decode('utf-8')", "after": "return raw.encode('ascii').decode('utf-8') if isinstance(raw, str) else raw.decode('utf-8')", "hazard": "bytes_unicode", "reason": "Preserve the ASCII boundary when decode is applied to Unicode input; bytes decode as UTF-8."},
+      {"path": "main.py", "before": "return type(raw).__name__, type(text).__name__, len(raw), len(text)", "after": "return _legacy_type_name(raw), _legacy_type_name(text), len(raw), len(text)", "hazard": "bytes_unicode", "reason": "Return the original byte-valued Python 2 type labels for byte and Unicode values rather than modern type labels."},
+      {"path": "main.py", "before": "\ndef describe(", "after": "\ndef _legacy_type_name(value):\n    \"\"\"[Machine-generated] Report built-in text type names using the original byte labels.\"\"\"\n    return {bytes: b'str', str: b'unicode'}.get(type(value), type(value).__name__.encode('ascii'))\n\n\ndef describe(", "hazard": "bytes_unicode", "reason": "Centralize type-label compatibility without branches based on fixture values."}
+    ],
+    "new_files": [],
+    "needs_human_review": ["List materialization is supplied by deterministic map/filter/zip fixers and requires CP9 behavioral verification.", "Unicode/byte runtime return tags and precise exception records remain unverified until CP9."]
+  },
+  "ranking": {
+    "edits": [
+      {"path": "main.py", "before": "\ndef compare_scores(", "after": "\nfrom functools import cmp_to_key\n\n\ndef _compare_values(left, right):\n    \"\"\"[Machine-generated] Three-way comparison for mutually orderable values.\"\"\"\n    # shortcut: Python 2 heterogeneous ordering/custom __cmp__ is unsupported; review such inputs.\n    return (left > right) - (left < right)\n\n\ndef compare_scores(", "hazard": "comparison_sort", "reason": "Use the standard cmp_to_key adapter and a shared comparator for the original score/name ordering."},
+      {"path": "main.py", "before": "score_order = cmp(right[1], left[1])", "after": "score_order = _compare_values(right[1], left[1])", "hazard": "comparison_sort", "reason": "Keep descending score comparison and its caller signature."},
+      {"path": "main.py", "before": "return cmp(left[0].lower(), right[0].lower())", "after": "return _compare_values(left[0].lower(), right[0].lower())", "hazard": "comparison_sort", "reason": "Preserve case-insensitive tie comparison using the same three-way helper."},
+      {"path": "main.py", "before": "rows.sort(cmp=compare_scores)", "after": "rows.sort(key=cmp_to_key(compare_scores))", "hazard": "comparison_sort", "reason": "Update the comparison callback's dependent sort call for Python 3 without changing the public API."}
+    ],
+    "new_files": [],
+    "needs_human_review": ["Mixed incomparable types, NaN ordering and user-defined __cmp__ may differ; CP9 must report unresolved cases."]
+  },
+  "file_report": {
+    "edits": [
+      {"path": "reportkit/summary.py", "before": "\ndef summarize(", "after": "\nfrom ._legacy_compat import legacy_divide\n\n\ndef summarize(", "hazard": "division", "reason": "Keep the package-relative import graph while sharing the integer/float division helper."},
+      {"path": "reportkit/summary.py", "before": "sum(numbers) / len(numbers)", "after": "legacy_divide(sum(numbers), len(numbers))", "hazard": "division", "reason": "Preserve integer-rounded means while retaining float behavior and evaluating operands once."},
+      {"path": "reportkit/summary.py", "before": "return {'count': 0, 'mean': None}", "after": "return {b'count': 0, b'mean': None}", "hazard": "bytes_unicode", "reason": "Retain the byte-valued report keys used by the original empty summary."},
+      {"path": "reportkit/summary.py", "before": "return {'count': len(numbers), 'mean': legacy_divide(sum(numbers), len(numbers))}", "after": "return {b'count': len(numbers), b'mean': legacy_divide(sum(numbers), len(numbers))}", "hazard": "bytes_unicode", "reason": "Retain the same byte-valued keys for nonempty summaries and their downstream report consumers."},
+      {"path": "reportkit/__init__.py", "before": "stream.write('7\\n-2\\n0\\n')", "after": "stream.write(b'7\\n-2\\n0\\n')", "hazard": "bytes_unicode", "reason": "A binary output stream requires the original byte payload; preserve the suspected input-overwrite bug."},
+      {"path": "reportkit/__init__.py", "before": "report['ticket']", "after": "report[b'ticket']", "hazard": "bytes_unicode", "reason": "Keep added report keys consistent with the summary's byte keys and original Python 2 literals."},
+      {"path": "reportkit/__init__.py", "before": "report['created_at']", "after": "report[b'created_at']", "hazard": "bytes_unicode", "reason": "Preserve the byte-valued timestamp key; do not normalize or remove clock behavior."},
+      {"path": "reportkit/storage.py", "before": "stream.write('%s=%s\\n' % (key, value))", "after": "key_text = key.decode('ascii') if isinstance(key, bytes) else key\n            value_text = value.decode('ascii') if isinstance(value, bytes) else value\n            stream.write(('%s=%s\\n' % (key_text, value_text)).encode('ascii'))", "hazard": "bytes_unicode", "reason": "Format ASCII byte fields as their contents rather than bytes repr and encode binary writes explicitly. Keep errors visible rather than replacing undecodable values."}
+    ],
+    "new_files": [
+      {"path": "reportkit/_legacy_compat.py", "source": "\"\"\"[Machine-generated] Compatibility for built-in numeric division.\"\"\"\n\n\ndef legacy_divide(left, right):\n    \"\"\"[Machine-generated] Floor integer quotients; divide other numbers normally.\"\"\"\n    # shortcut: custom Python 2 __div__ protocols are unsupported; review user-defined numeric types.\n    if isinstance(left, int) and isinstance(right, int):\n        return left // right\n    return left / right\n", "hazard": "division", "reason": "Provide one package-local numeric helper used by summarize and callers through its unchanged API."}
+    ],
+    "needs_human_review": ["Successful clock/randomness paths remain quarantined; conversion cannot claim equivalence for them.", "Precise exception records, non-ASCII byte formatting and arbitrary custom numeric objects need CP9 evaluation."]
+  }
+}

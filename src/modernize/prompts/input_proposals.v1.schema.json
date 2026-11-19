@@ -1,0 +1,62 @@
+{
+  "$defs": {
+    "ProposedInput": {
+      "additionalProperties": false,
+      "properties": {
+        "args_json": {
+          "maxLength": 16000,
+          "title": "Args Json",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "typical",
+            "edge",
+            "empty",
+            "boundary",
+            "unicode",
+            "bytes"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "kwargs_json": {
+          "maxLength": 16000,
+          "title": "Kwargs Json",
+          "type": "string"
+        },
+        "reason": {
+          "maxLength": 800,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "args_json",
+        "kwargs_json",
+        "reason"
+      ],
+      "title": "ProposedInput",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/ProposedInput"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Cases",
+      "type": "array"
+    }
+  },
+  "required": [
+    "cases"
+  ],
+  "title": "InputProposals",
+  "type": "object"
+}

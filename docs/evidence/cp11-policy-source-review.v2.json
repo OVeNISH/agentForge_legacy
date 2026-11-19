@@ -1,0 +1,36 @@
+{
+  "limitations": "Supports recorded primitive inputs only; custom numeric protocols, mixed-type ordering, dynamic behavior and quarantined clock paths remain outside the evidence.",
+  "projects": {
+    "file_report": {
+      "assessment": "Reviewed general numeric/type/encoding/sorting compatibility and unchanged public API; file_report adds shared path-only open validation. No fixture-valued branches, exception suppression, test access or observation mutation. Golden ledger additionally formats byte-literal diagnostics returned as data, preserving bytes and full error contents with only the Python 3 repr prefix removed. No normalization of returned data.",
+      "executable_sha256": {
+        "main.py": "373c81a3ff018329c3b93466283356ce299de1f969c14b6f7cf52c72f5960558",
+        "reportkit/__init__.py": "cbb1c4d9ebdc95978e6fe61c8202d92cdfe5ba6214cef90eaf9d103e893e1f56",
+        "reportkit/_legacy_compat.py": "903d3832ddf8efe0f4ea9a8ebc5629a8839686d5aad467b920943fa3fca773fe",
+        "reportkit/storage.py": "8c8799daac525165924b42aea7d958a9e92e7e7816f46c40bc48916006298f40",
+        "reportkit/summary.py": "4cd231b0e64d0e3c2c4427d0c7e554a8ae310cd38b14a7a0fb12a268c004f096"
+      }
+    },
+    "golden_ledger": {
+      "assessment": "Reviewed general numeric/type/encoding/sorting compatibility and unchanged public API; file_report adds shared path-only open validation. No fixture-valued branches, exception suppression, test access or observation mutation. Golden ledger additionally formats byte-literal diagnostics returned as data, preserving bytes and full error contents with only the Python 3 repr prefix removed. No normalization of returned data.",
+      "executable_sha256": {
+        "_legacy_compat.py": "cc7e31251af6b879fa2e46c1fc92f0738755b68b63a752c1f3e206045df065a5",
+        "main.py": "250620f60855b0ea542e0aad73baa908fe0863dce3dc875c56492071d6930816"
+      }
+    },
+    "ranking": {
+      "assessment": "Reviewed general numeric/type/encoding/sorting compatibility and unchanged public API; file_report adds shared path-only open validation. No fixture-valued branches, exception suppression, test access or observation mutation. Golden ledger additionally formats byte-literal diagnostics returned as data, preserving bytes and full error contents with only the Python 3 repr prefix removed. No normalization of returned data.",
+      "executable_sha256": {
+        "main.py": "e875cf78421fdf2b582a2c0e94ac6247408c0fa1bd4a9d435bc2095b1107534a"
+      }
+    },
+    "text_pipeline": {
+      "assessment": "Reviewed general numeric/type/encoding/sorting compatibility and unchanged public API; file_report adds shared path-only open validation. No fixture-valued branches, exception suppression, test access or observation mutation. Golden ledger additionally formats byte-literal diagnostics returned as data, preserving bytes and full error contents with only the Python 3 repr prefix removed. No normalization of returned data.",
+      "executable_sha256": {
+        "main.py": "a1c94b0819c03160b0c28fae1ad903e1038f34c4f85f890fd9dbd4a977f33ed3"
+      }
+    }
+  },
+  "reviewer": "Coding agent",
+  "scope": "Pre-evaluation review of executable ASTs, excluding only CP7-validated generated docstrings. Raw final source hashes remain locked separately; payload strings, branches, imports and exception handling must match reviewed code."
+}

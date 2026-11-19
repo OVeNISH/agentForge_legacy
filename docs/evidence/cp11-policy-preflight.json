@@ -1,0 +1,123 @@
+{
+  "cp5_archive_sha256": "6488d6a708ef0cd9b0858b20d7e25af9341df7e44b10e0a9cd818f9d29f1b6a2",
+  "implementation_sha256": "4cda413f13d45d2ef8ae0ae636a9ebe29645bf5df3ec4ed9c8af20e942ff6733",
+  "mutations": [
+    {
+      "detected": true,
+      "name": "division",
+      "record": "cp5.tar.gz!/mutations/division.json"
+    },
+    {
+      "detected": true,
+      "name": "accumulation",
+      "record": "cp5.tar.gz!/mutations/accumulation.json"
+    },
+    {
+      "detected": true,
+      "name": "parse",
+      "record": "cp5.tar.gz!/mutations/parse.json"
+    },
+    {
+      "detected": true,
+      "name": "filter",
+      "record": "cp5.tar.gz!/mutations/filter.json"
+    },
+    {
+      "detected": true,
+      "name": "zip_length",
+      "record": "cp5.tar.gz!/mutations/zip_length.json"
+    },
+    {
+      "detected": true,
+      "name": "sort_order",
+      "record": "cp5.tar.gz!/mutations/sort_order.json"
+    },
+    {
+      "detected": true,
+      "name": "mean",
+      "record": "cp5.tar.gz!/mutations/mean.json"
+    },
+    {
+      "detected": false,
+      "name": "clock_blind_spot",
+      "record": "cp5.tar.gz!/mutations/clock_blind_spot.json"
+    }
+  ],
+  "policy": "python2-python3.v1",
+  "scope": "Training-only policy development and source-repair probe. No held-out cases were supplied to repairs. Mutation recheck reuses recorded raw mutations; not fresh mutation executions.",
+  "source_review_matches": true,
+  "tests": {
+    "command": [
+      "/Users/awanishkumar/hornet/sem5/agenticAI/.venv/bin/python",
+      "scripts/test.py"
+    ],
+    "exit_code": 0,
+    "stderr": "test_adapter_validates_worker_and_snapshot (test_analysis.AnalysisTests.test_adapter_validates_worker_and_snapshot) ... ok\ntest_cross_file_import_call_graph_and_shadowing (test_analysis.AnalysisTests.test_cross_file_import_call_graph_and_shadowing) ... ok\ntest_future_absolute_import_and_ambiguous_imports_remain_distinct (test_analysis.AnalysisTests.test_future_absolute_import_and_ambiguous_imports_remain_distinct) ... ok\ntest_inventory_extensions_exclusions_and_symlinks (test_analysis.AnalysisTests.test_inventory_extensions_exclusions_and_symlinks) ... ok\ntest_method_cannot_resolve_a_class_local_as_a_lexical_variable (test_analysis.AnalysisTests.test_method_cannot_resolve_a_class_local_as_a_lexical_variable) ... ok\ntest_parse_failure_names_file_and_timeout_removes_container (test_analysis.AnalysisTests.test_parse_failure_names_file_and_timeout_removes_container) ... ok\ntest_schema_rejects_invalid_positions_and_marker_kinds (test_analysis.AnalysisTests.test_schema_rejects_invalid_positions_and_marker_kinds) ... ok\ntest_schema_rejects_missing_extra_and_wrong_types (test_analysis.AnalysisTests.test_schema_rejects_missing_extra_and_wrong_types) ... ok\ntest_sequential_and_parallel_merge_identically (test_analysis.AnalysisTests.test_sequential_and_parallel_merge_identically) ... ok\ntest_side_effect_categories_with_aliases_and_shadowed_builtins (test_analysis.AnalysisTests.test_side_effect_categories_with_aliases_and_shadowed_builtins) ... ok\ntest_recorded_corpus_analysis_is_complete_valid_and_reproducible (test_analysis_evidence.AnalysisEvidenceTests.test_recorded_corpus_analysis_is_complete_valid_and_reproducible) ... ok\ntest_comments_and_encoding (test_analysis_worker.WorkerTests.test_comments_and_encoding) ... ok\ntest_functions_classes_signatures_and_docstrings (test_analysis_worker.WorkerTests.test_functions_classes_signatures_and_docstrings) ... ok\ntest_global_mutable_markers (test_analysis_worker.WorkerTests.test_global_mutable_markers) ... ok\ntest_imports_calls_scopes_and_references (test_analysis_worker.WorkerTests.test_imports_calls_scopes_and_references) ... ok\ntest_invalid_source_is_not_skipped (test_analysis_worker.WorkerTests.test_invalid_source_is_not_skipped) ... ok\ntest_lambda_parameters_have_a_separate_scope (test_analysis_worker.WorkerTests.test_lambda_parameters_have_a_separate_scope) ... ok\ntest_parsing_does_not_execute_code (test_analysis_worker.WorkerTests.test_parsing_does_not_execute_code) ... ok\ntest_python2_specific_nodes (test_analysis_worker.WorkerTests.test_python2_specific_nodes) ... skipped 'requires the recorded Python 2.7 worker test run'\ntest_archived_baseline_recomputes_and_detects_tampering (test_baseline.BaselineTests.test_archived_baseline_recomputes_and_detects_tampering) ... ok\ntest_failure_groups_preserve_exact_comparison (test_baseline.BaselineTests.test_failure_groups_preserve_exact_comparison) ... ok\ntest_golden_capture_agrees_with_hand_checkable_division (test_characterization_evidence.CharacterizationEvidenceTests.test_golden_capture_agrees_with_hand_checkable_division) ... ok\ntest_raw_evidence_recomputes_checkpoint_metrics (test_characterization_evidence.CharacterizationEvidenceTests.test_raw_evidence_recomputes_checkpoint_metrics) ... ok\ntest_coverage_denominator_is_static_not_observed (test_characterize.CharacterizationTests.test_coverage_denominator_is_static_not_observed) ... ok\ntest_exact_observation_and_infrastructure_rejection (test_characterize.CharacterizationTests.test_exact_observation_and_infrastructure_rejection) ... ok\ntest_flaky_cases_quarantine_and_bounded_coverage_feedback (test_characterize.CharacterizationTests.test_flaky_cases_quarantine_and_bounded_coverage_feedback) ... ok\ntest_prompt_mock_and_input_trust_boundary (test_characterize.CharacterizationTests.test_prompt_mock_and_input_trust_boundary) ... ok\ntest_seal_detects_changes_and_export_excludes_heldout_and_logs (test_characterize.CharacterizationTests.test_seal_detects_changes_and_export_excludes_heldout_and_logs) ... ok\ntest_builtin_diagnostics_preserve_class_operator_and_payload (test_comparison.ComparisonTests.test_builtin_diagnostics_preserve_class_operator_and_payload) ... ok\ntest_diagnostics_do_not_hide_arity_or_unknown_message_changes (test_comparison.ComparisonTests.test_diagnostics_do_not_hide_arity_or_unknown_message_changes) ... ok\ntest_policy_metrics_do_not_rewrite_raw_pass_flags (test_comparison.ComparisonTests.test_policy_metrics_do_not_rewrite_raw_pass_flags) ... ok\ntest_representation_aliases_preserve_types_data_and_raw_evidence (test_comparison.ComparisonTests.test_representation_aliases_preserve_types_data_and_raw_evidence) ... ok\ntest_unicode_error_offsets_encoding_and_data_are_not_ignored (test_comparison.ComparisonTests.test_unicode_error_offsets_encoding_and_data_are_not_ignored) ... ok\ntest_every_project_has_successful_evidence_for_current_sources (test_corpus.CorpusTests.test_every_project_has_successful_evidence_for_current_sources) ... ok\ntest_inventory_has_provenance_and_all_required_hazards (test_corpus.CorpusTests.test_inventory_has_provenance_and_all_required_hazards) ... ok\ntest_checksums_detect_fixture_edit_addition_and_deletion (test_documentation.DocumentationTests.test_checksums_detect_fixture_edit_addition_and_deletion) ... ok\ntest_observed_claims_filter_target_and_list_mismatches (test_documentation.DocumentationTests.test_observed_claims_filter_target_and_list_mismatches) ... ok\ntest_versioned_prompt_validates_retries_and_logs (test_documentation.DocumentationTests.test_versioned_prompt_validates_retries_and_logs) ... ok\ntest_documentation_coverage_claims_and_checksum_proof_recompute (test_documentation_evidence.DocumentationEvidenceTests.test_documentation_coverage_claims_and_checksum_proof_recompute) ... ok\ntest_defaults (test_foundation.ConfigurationTests.test_defaults) ... ok\ntest_invalid_documents_are_rejected (test_foundation.ConfigurationTests.test_invalid_documents_are_rejected) ... ok\ntest_missing_file_is_rejected (test_foundation.ConfigurationTests.test_missing_file_is_rejected) ... ok\ntest_overrides_preserve_other_defaults (test_foundation.ConfigurationTests.test_overrides_preserve_other_defaults) ... ok\ntest_configuration_filters_level_and_does_not_duplicate_events (test_foundation.LoggingTests.test_configuration_filters_level_and_does_not_duplicate_events) ... ok\ntest_formatter_preserves_message_as_json (test_foundation.LoggingTests.test_formatter_preserves_message_as_json) ... ok\ntest_custom_response (test_foundation.MockClientTests.test_custom_response) ... ok\ntest_interface_returns_deterministic_response (test_foundation.MockClientTests.test_interface_returns_deterministic_response) ... ok\ntest_recorded_retries_usage_and_redaction_recompute (test_llm_evidence.LLMEvidenceTests.test_recorded_retries_usage_and_redaction_recompute) ... ok\ntest_configuration_and_metadata_validation (test_llm_layer.LLMLayerTests.test_configuration_and_metadata_validation) ... ok\ntest_every_template_has_schema_and_mock_validation (test_llm_layer.LLMLayerTests.test_every_template_has_schema_and_mock_validation) ... ok\ntest_malformed_response_retries_then_logged_failure (test_llm_layer.LLMLayerTests.test_malformed_response_retries_then_logged_failure) ... ok\ntest_rate_limit_delay_over_budget_stops_without_early_retry (test_llm_layer.LLMLayerTests.test_rate_limit_delay_over_budget_stops_without_early_retry) ... ok\ntest_retry_window_stops_a_late_response (test_llm_layer.LLMLayerTests.test_retry_window_stops_a_late_response) ... ok\ntest_schema_rejects_expected_outputs_wrong_types_and_bad_argument_json (test_llm_layer.LLMLayerTests.test_schema_rejects_expected_outputs_wrong_types_and_bad_argument_json) ... ok\ntest_secrets_are_redacted_from_requests_errors_and_serialized_logs (test_llm_layer.LLMLayerTests.test_secrets_are_redacted_from_requests_errors_and_serialized_logs) ... ok\ntest_unknown_usage_and_unpriced_cache_write_are_not_claimed_as_zero (test_llm_layer.LLMLayerTests.test_unknown_usage_and_unpriced_cache_write_are_not_claimed_as_zero) ... ok\ntest_validation_feedback_recovers_and_all_attempt_tokens_are_charged (test_llm_layer.LLMLayerTests.test_validation_feedback_recovers_and_all_attempt_tokens_are_charged) ... ok\ntest_command_exit_codes_distinguish_review_verification_and_failure (test_pipeline.PipelineTests.test_command_exit_codes_distinguish_review_verification_and_failure) ... ok\ntest_failed_stage_retains_diagnostics_and_checksum_proof (test_pipeline.PipelineTests.test_failed_stage_retains_diagnostics_and_checksum_proof) ... ok\ntest_raw_report_preserves_strict_rates_and_rejects_tampering (test_pipeline.PipelineTests.test_raw_report_preserves_strict_rates_and_rejects_tampering) ... ok\ntest_clean_checkouts_reproduce_strict_failures_from_fresh_raw_records (test_pipeline_evidence.PipelineEvidenceTests.test_clean_checkouts_reproduce_strict_failures_from_fresh_raw_records) ... ok\ntest_accepts_fix_and_publishes_only_validated_source (test_repair.RepairTests.test_accepts_fix_and_publishes_only_validated_source) ... ok\ntest_caps_invalid_and_empty_proposals_without_publication (test_repair.RepairTests.test_caps_invalid_and_empty_proposals_without_publication) ... ok\ntest_diff_scan_flags_branches_exception_handlers_and_fixture_access (test_repair.RepairTests.test_diff_scan_flags_branches_exception_handlers_and_fixture_access) ... ok\ntest_prompt_schema_retry_and_failure_diagnostics (test_repair.RepairTests.test_prompt_schema_retry_and_failure_diagnostics) ... ok\ntest_regression_rejects_candidate_even_when_one_failure_is_fixed (test_repair.RepairTests.test_regression_rejects_candidate_even_when_one_failure_is_fixed) ... ok\ntest_raw_runs_caps_checksums_heldout_separation_and_diffs_recompute (test_repair_evidence.RepairEvidenceTests.test_raw_runs_caps_checksums_heldout_separation_and_diffs_recompute) ... ok\ntest_tampered_counts_or_heldout_records_are_rejected (test_repair_evidence.RepairEvidenceTests.test_tampered_counts_or_heldout_records_are_rejected) ... ok\ntest_edited_report_numbers_and_markdown_are_rejected (test_reporting.ReportingTests.test_edited_report_numbers_and_markdown_are_rejected) ... ok\ntest_report_recomputes_shared_denominators_and_all_required_evidence (test_reporting.ReportingTests.test_report_recomputes_shared_denominators_and_all_required_evidence) ... ok\ntest_tampered_raw_replay_is_rejected_before_publishing (test_reporting.ReportingTests.test_tampered_raw_replay_is_rejected_before_publishing) ... ok\ntest_declared_image_volumes_are_rejected_before_creation (test_sandbox.SandboxTests.test_declared_image_volumes_are_rejected_before_creation) ... ok\ntest_docker_wire_output_is_bounded (test_sandbox.SandboxTests.test_docker_wire_output_is_bounded) ... ok\ntest_input_values_round_trip_and_output_types_are_retained (test_sandbox.SandboxTests.test_input_values_round_trip_and_output_types_are_retained) ... ok\ntest_limits_and_input_boundaries (test_sandbox.SandboxTests.test_limits_and_input_boundaries) ... ok\ntest_protocol_errors_still_remove_container_and_cleanup_errors_surface (test_sandbox.SandboxTests.test_protocol_errors_still_remove_container_and_cleanup_errors_surface) ... ok\ntest_schema_validates_bytes_hashes_and_typed_values (test_sandbox.SandboxTests.test_schema_validates_bytes_hashes_and_typed_values) ... ok\ntest_recorded_isolation_and_deterministic_replay (test_sandbox_evidence.SandboxEvidenceTests.test_recorded_isolation_and_deterministic_replay) ... ok\ntest_output_cannot_overwrite_input_or_existing_artifacts (test_scan_cli.ScanCLITests.test_output_cannot_overwrite_input_or_existing_artifacts) ... ok\ntest_scan_writes_artifacts_and_records_failure (test_scan_cli.ScanCLITests.test_scan_writes_artifacts_and_records_failure) ... ok\ntest_changed_public_signature_is_rejected (test_transformation.TransformationTests.test_changed_public_signature_is_rejected) ... ok\ntest_failed_candidate_is_retried_without_partial_publication (test_transformation.TransformationTests.test_failed_candidate_is_retried_without_partial_publication) ... ok\ntest_safe_paths_base_hashes_duplicates_and_compile_rejection (test_transformation.TransformationTests.test_safe_paths_base_hashes_duplicates_and_compile_rejection) ... ok\ntest_versioned_schema_mock_retry_and_extra_field_rejection (test_transformation.TransformationTests.test_versioned_schema_mock_retry_and_extra_field_rejection) ... ok\ntest_sources_diffs_imports_reasons_and_unchanged_fixtures_recompute (test_transformation_evidence.TransformationEvidenceTests.test_sources_diffs_imports_reasons_and_unchanged_fixtures_recompute) ... ok\n\n----------------------------------------------------------------------\nRan 85 tests in 2.428s\n\nOK (skipped=1)\ntest_config_stdout_and_structured_stderr (test_cli.CLITests.test_config_stdout_and_structured_stderr) ... ok\ntest_help_and_version (test_cli.CLITests.test_help_and_version) ... ok\ntest_invalid_config_and_missing_command (test_cli.CLITests.test_invalid_config_and_missing_command) ... ok\ntest_auth_failure_is_fatal_and_redacted (test_openai_sdk.OpenAISDKTests.test_auth_failure_is_fatal_and_redacted) ... ok\ntest_invalid_schema_gets_feedback_then_recovers (test_openai_sdk.OpenAISDKTests.test_invalid_schema_gets_feedback_then_recovers) ... ok\ntest_key_echo_cannot_leak_to_artifacts (test_openai_sdk.OpenAISDKTests.test_key_echo_cannot_leak_to_artifacts) ... ok\ntest_malformed_response_is_bounded_and_logged (test_openai_sdk.OpenAISDKTests.test_malformed_response_is_bounded_and_logged) ... ok\ntest_refusal_is_logged_without_schema_acceptance (test_openai_sdk.OpenAISDKTests.test_refusal_is_logged_without_schema_acceptance) ... ok\ntest_success_uses_sdk_and_reports_usage (test_openai_sdk.OpenAISDKTests.test_success_uses_sdk_and_reports_usage) ... ok\ntest_timeout_and_rate_limit_retry_without_hidden_sdk_retries (test_openai_sdk.OpenAISDKTests.test_timeout_and_rate_limit_retry_without_hidden_sdk_retries) ... ok\ntest_truncated_response_retries_and_accounts_for_usage (test_openai_sdk.OpenAISDKTests.test_truncated_response_retries_and_accounts_for_usage) ... ok\ntest_actual_integration_failure_returns_nonzero (test_runner.RunnerTests.test_actual_integration_failure_returns_nonzero) ... ok\ntest_actual_unit_failure_stops_integration (test_runner.RunnerTests.test_actual_unit_failure_stops_integration) ... ok\ntest_empty_suite_is_not_success (test_runner.RunnerTests.test_empty_suite_is_not_success) ... ok\ntest_runs_unit_before_integration (test_runner.RunnerTests.test_runs_unit_before_integration) ... ok\ntest_bypassed_outcome_is_reported_as_protocol_failure (test_sandbox_docker.DockerSandboxTests.test_bypassed_outcome_is_reported_as_protocol_failure) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\ntest_cpu_limit_stops_a_runaway_loop (test_sandbox_docker.DockerSandboxTests.test_cpu_limit_stops_a_runaway_loop) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\ntest_deterministic_values_streams_and_files (test_sandbox_docker.DockerSandboxTests.test_deterministic_values_streams_and_files) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\ntest_exceptions_and_unsupported_returns (test_sandbox_docker.DockerSandboxTests.test_exceptions_and_unsupported_returns) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\ntest_excessive_memory_request_is_stopped (test_sandbox_docker.DockerSandboxTests.test_excessive_memory_request_is_stopped) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\ntest_filesystem_protection_and_discard (test_sandbox_docker.DockerSandboxTests.test_filesystem_protection_and_discard) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\ntest_network_call_is_denied (test_sandbox_docker.DockerSandboxTests.test_network_call_is_denied) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\ntest_package_relative_imports_keep_function_globals (test_sandbox_docker.DockerSandboxTests.test_package_relative_imports_keep_function_globals) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\ntest_supplied_test_script_runs_in_both_runtimes (test_sandbox_docker.DockerSandboxTests.test_supplied_test_script_runs_in_both_runtimes) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\ntest_wall_timeout_keeps_partial_capture (test_sandbox_docker.DockerSandboxTests.test_wall_timeout_keeps_partial_capture) ... skipped 'live Docker tests require MODERNIZE_DOCKER_TESTS=1'\n\n----------------------------------------------------------------------\nRan 25 tests in 0.387s\n\nOK (skipped=10)\n",
+    "stdout": "Running unit tests\nRunning integration tests\n"
+  },
+  "training_probe_report": {
+    "attempts": [
+      {
+        "accepted": true,
+        "error": null,
+        "function": [
+          "reportkit/__init__.py",
+          "build_report"
+        ],
+        "function_attempt": 1,
+        "index": 0
+      }
+    ],
+    "changed_files": [
+      "reportkit/__init__.py",
+      "reportkit/_legacy_compat.py",
+      "reportkit/storage.py"
+    ],
+    "final": {
+      "pass_rate_percent": 100.0,
+      "passed": 17,
+      "tests": 17,
+      "unresolved": []
+    },
+    "final_sha256": {
+      "main.py": "8c5c160ead944d48645eb19623c2318656b6e3baf811f7edb8b6eea5988b2f0a",
+      "reportkit/__init__.py": "43432110b63327fbc20a2c8a0e28df94258f9d0269f015be6173a5a542f67d9f",
+      "reportkit/_legacy_compat.py": "fc28def09ffe2fdb2c194841ff6b222d31c7236833c5073742c40b324ff7ced2",
+      "reportkit/storage.py": "72feb5eb9cfbb30e6b636d2b2e54dd094b797dad8591d6fb039e6e4b1de186e1",
+      "reportkit/summary.py": "b0a2a2c5e7f6d7ed0d14a4b50646e0b9b09b836f32d44ed6eb935cca6b5c5b33"
+    },
+    "incoming_sha256": {
+      "main.py": "8c5c160ead944d48645eb19623c2318656b6e3baf811f7edb8b6eea5988b2f0a",
+      "reportkit/__init__.py": "10b26a5e943714979b336e6ea1ce5aab78f6a20a971879c41c17294f71883a26",
+      "reportkit/_legacy_compat.py": "a622d0de838f2a09c9ce092c7e71fd4926ee1ad4d75329bb1b18390af6b1c5c5",
+      "reportkit/storage.py": "80a9e15081b0f42b24cdc987691f2e21df3b08cc3c84ed672b85d063575b12b9",
+      "reportkit/summary.py": "b0a2a2c5e7f6d7ed0d14a4b50646e0b9b09b836f32d44ed6eb935cca6b5c5b33"
+    },
+    "initial": {
+      "pass_rate_percent": 94.11764705882354,
+      "passed": 16,
+      "tests": 17,
+      "unresolved": [
+        "e665e1c7d0504c7b33c6"
+      ]
+    },
+    "max_attempts_per_function": 2,
+    "needs_human_review": [],
+    "project": "file_report",
+    "retry_counts": {
+      "reportkit/__init__.py::build_report": 1
+    },
+    "review": {
+      "findings": [
+        {
+          "path": "reportkit/_legacy_compat.py",
+          "rule": "changed_branch_count"
+        }
+      ],
+      "limitation": "Heuristic only; inspect all saved diffs for fixture branches, swallowed exceptions and changed comparisons.",
+      "status": "needs_human_review"
+    },
+    "status": "needs_human_review",
+    "training_fixture_sha256": "0ca6f23ba18e8283d5169ed954d2eefe99ad7f892c4ce5d4a4ef8a368b8c55b6"
+  }
+}

@@ -1,0 +1,830 @@
+{
+  "golden_ledger/main.py::split_bill": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[7, 2]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[-7, 2]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[0, 1]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[7, 0]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[\"\\u00e9\", 2]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[{\"$bytes\": \"Nw==\"}, 2]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "golden_ledger/main.py::summarize": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[{\"Ada\": 7, \"Lin\": -2}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[{\"x\": -1}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[{}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[{\"x\": 0}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[{\"\\u00e9\": 9}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[{\"x\": {\"$bytes\": \"Nw==\"}}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "golden_ledger/main.py::parse_amount": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[\"12\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[\"bad\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[\"\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[\"-2147483649\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[\"\\uff11\\uff12\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[{\"$bytes\": \"/w==\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "text_pipeline/main.py::clean_names": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[[\" Ada \", \"\", \" Lin \"]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[[\" \", \"\\t\"]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[[]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[[null]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[[\" caf\\u00e9 \", \"\\u96ea\"]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[[{\"$bytes\": \"IEEg\"}, {\"$bytes\": \"\"}]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "text_pipeline/main.py::pair_names": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[[\"A\", \"B\"]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[[null]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[[]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[[0]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[[\"\\u00e9\", \"\\u96ea\"]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[[{\"$bytes\": \"/w==\"}]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "text_pipeline/main.py::encode_label": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[\"abc\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[null]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[\"\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[\"\\u0000\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[\"caf\\u00e9\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[{\"$bytes\": \"/w==\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "text_pipeline/main.py::decode_label": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[{\"$bytes\": \"YWJj\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[{\"$bytes\": \"/w==\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[{\"$bytes\": \"\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[{\"$bytes\": \"AA==\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[{\"$bytes\": \"Y2Fmw6k=\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[\"\\u00e9\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "text_pipeline/main.py::describe": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[{\"$bytes\": \"YWJj\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[{\"$bytes\": \"/w==\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[{\"$bytes\": \"\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[{\"$bytes\": \"AA==\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[{\"$bytes\": \"Y2Fmw6k=\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[\"\\u00e9\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "ranking/main.py::compare_scores": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[[\"Ada\", 7], [\"Lin\", 4]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[[\"Ada\", -1], [\"Lin\", 2]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[[], []]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[[\"A\", 0], [\"B\", 1]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[[\"\\u00e9\", 2], [\"\\u96ea\", 3]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[[{\"$bytes\": \"QQ==\"}, 1], [{\"$bytes\": \"Qg==\"}, 2]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ],
+    [
+      {
+        "category": "typical",
+        "args_json": "[[\"Ada\", 7], [\"Ada\", 7]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[[\"Bob\", 7], [\"ada\", 7]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "ranking/main.py::Scoreboard.__init__": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[0]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "ranking/main.py::Scoreboard.add": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[\"Ada\", 7]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[\"Ada\", -2]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[{\"method\": \"add\", \"args\": [\"Ada\", 4], \"kwargs\": {}}]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[\"\", 0]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[\"Ada\", 0]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[\"\\u00e9\", 5]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[{\"$bytes\": \"/w==\"}, 1]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "ranking/main.py::Scoreboard.ranked": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[{\"method\": \"add\", \"args\": [\"Ada\", 7], \"kwargs\": {}}, {\"method\": \"add\", \"args\": [\"Lin\", 4], \"kwargs\": {}}]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[{\"method\": \"add\", \"args\": [\"Bob\", 7], \"kwargs\": {}}, {\"method\": \"add\", \"args\": [\"ada\", 7], \"kwargs\": {}}]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[{\"method\": \"add\", \"args\": [\"A\", 0], \"kwargs\": {}}]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[{\"method\": \"add\", \"args\": [\"\\u00e9\", 2], \"kwargs\": {}}, {\"method\": \"add\", \"args\": [\"\\u96ea\", 1], \"kwargs\": {}}]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[{\"method\": \"add\", \"args\": [{\"$bytes\": \"QQ==\"}, 3], \"kwargs\": {}}]"
+      }
+    ]
+  ],
+  "file_report/reportkit/__init__.py::build_report": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[\"in.txt\", \"out.txt\", 7]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[\"in.txt\", \"out.txt\", null]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[\"in.txt\", \"out.txt\", 0]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[0, \"out.txt\", 7]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[\"entr\\u00e9e.txt\", \"r\\u00e9sum\\u00e9.txt\", 9]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[{\"$bytes\": \"aW4udHh0\"}, {\"$bytes\": \"b3V0LnR4dA==\"}, 8]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "file_report/reportkit/storage.py::read_numbers": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[\"numbers.txt\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{\"numbers.txt\": \"NwotMgowCg==\"}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[\"numbers.txt\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{\"numbers.txt\": \"YmFkCg==\"}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[\"numbers.txt\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{\"numbers.txt\": \"\"}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[\"numbers.txt\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{\"numbers.txt\": \"CjAK\"}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[\"numbers.txt\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{\"numbers.txt\": \"77yR77ySCg==\"}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[\"numbers.txt\"]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{\"numbers.txt\": \"/wo=\"}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "file_report/reportkit/storage.py::write_report": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[\"out.txt\", {\"count\": 3, \"mean\": 1}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[\"out.txt\", {\"a\": null}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[\"out.txt\", {}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[\"out.txt\", {\"a\": 0}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[\"out.txt\", {\"\\u00e9\": \"\\u96ea\"}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[{\"$bytes\": \"b3V0LnR4dA==\"}, {\"a\": {\"$bytes\": \"/w==\"}}]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ],
+  "file_report/reportkit/summary.py::summarize": [
+    [
+      {
+        "category": "typical",
+        "args_json": "[[7, -2, 0]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "edge",
+        "args_json": "[[-7, 2]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: edge input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "empty",
+        "args_json": "[[0]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: empty input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "boundary",
+        "args_json": "[[1, 2]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: boundary input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "unicode",
+        "args_json": "[[\"\\u00e9\"]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: unicode input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      },
+      {
+        "category": "bytes",
+        "args_json": "[[{\"$bytes\": \"Nw==\"}]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: bytes input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ],
+    [
+      {
+        "category": "typical",
+        "args_json": "[[]]",
+        "kwargs_json": "{}",
+        "reason": "Coding LLM proposal: typical input; observe legacy outcome only.",
+        "files_json": "{}",
+        "setup_json": "[]"
+      }
+    ]
+  ]
+}
